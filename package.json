@@ -8,7 +8,8 @@
     "build": "npm run clean && tsc",
     "clean": "rm -rf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "author": "Daniel Sogl",
   "license": "MIT",
@@ -16,14 +17,13 @@
     "@capacitor/core": "latest"
   },
   "devDependencies": {
-    "typescript": "^3.2.4",
     "@capacitor/ios": "latest",
-    "@capacitor/android": "latest"
+    "conventional-changelog-cli": "^2.0.23",
+    "typescript": "^3.2.4"
   },
   "files": [
     "dist/",
     "ios/",
-    "android/",
     "CapacitorFaceId.podspec"
   ],
   "keywords": [
