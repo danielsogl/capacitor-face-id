@@ -1,6 +1,7 @@
 # Capacitor Face ID Plugin
 
 [![npm version](https://badge.fury.io/js/capacitor-face-id.svg)](https://badge.fury.io/js/capacitor-face-id)
+[![Build Status](https://travis-ci.org/danielsogl/capacitor-face-id.svg?branch=master)](https://travis-ci.org/danielsogl/capacitor-face-id)
 
 Allow useres to authenticate with Face ID or Touch ID on iOS devices
 
