@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/capacitor-face-id.svg)](https://badge.fury.io/js/capacitor-face-id)
 [![Build Status](https://travis-ci.org/danielsogl/capacitor-face-id.svg?branch=master)](https://travis-ci.org/danielsogl/capacitor-face-id)
 
-Allow useres to authenticate with Face ID or Touch ID on iOS devices
+Allow users to authenticate with Face ID or Touch ID on iOS devices
 
 ![Logo](https://www.intego.com/mac-security-blog/wp-content/uploads/2017/10/Touch-ID-vs-Face-ID.png)
 
@@ -35,11 +35,11 @@ FaceId.isAvailable().then(checkResult => {
     FaceId.auth().then(() => {
       console.log('authenticated');
     }).catch((error: PluginResultError) => {
-      // handle rejection errors here
+      // handle rejection errors
       console.error(error.message);
     });
   } else {
-    // use fallback authentication here
+    // use custom fallback authentication here
   }
 });
 
