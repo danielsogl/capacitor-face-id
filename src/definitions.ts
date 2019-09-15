@@ -1,9 +1,10 @@
-declare module "@capacitor/core" {
+declare module '@capacitor/core' {
   interface PluginRegistry {
     FaceId: FaceIdPlugin;
   }
 }
 
 export interface FaceIdPlugin {
-  echo(options: { value: string }): Promise<{value: string}>;
+  isAvailable(): Promise<{ value: boolean }>;
+  auth(options: { title?: string; reason?: string }): Promise<void>;
 }

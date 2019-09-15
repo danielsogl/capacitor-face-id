@@ -9,9 +9,13 @@ export class FaceIdWeb extends WebPlugin implements FaceIdPlugin {
     });
   }
 
-  async echo(options: { value: string }): Promise<{value: string}> {
-    console.log('ECHO', options);
-    return options;
+  async isAvailable(): Promise<{ value: boolean }> {
+    return Promise.resolve({ value: false });
+  }
+
+  async auth(options: { title?: string; reason?: string }): Promise<void> {
+    console.log('AUTH', options);
+    return Promise.resolve();
   }
 }
 
