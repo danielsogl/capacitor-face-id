@@ -42,7 +42,7 @@ public class FaceId: CAPPlugin {
             authContext.localizedCancelTitle = title
         }
         
-        authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason ) { success, error in
+        authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason ) { success, error in
             if success {
                 DispatchQueue.main.async {
                     call.success()
