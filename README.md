@@ -1,0 +1,1 @@
+capacitor-face-id
