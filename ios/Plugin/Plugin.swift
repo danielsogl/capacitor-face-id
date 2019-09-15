@@ -35,13 +35,7 @@ public class FaceId: CAPPlugin {
     }
     
     @objc func auth(_ call: CAPPluginCall) {
-        let title = call.getString("title") ?? ""
-        let reason = call.getString("reason") ?? "Authenticate"
-        
-        if(title != "") {
-            authContext.localizedCancelTitle = title
-        }
-        
+        let reason = call.getString("reason") ?? "Access requires authentication"
         authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason ) { success, error in
             if success {
                 DispatchQueue.main.async {

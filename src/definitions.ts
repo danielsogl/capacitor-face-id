@@ -7,5 +7,5 @@ declare module '@capacitor/core' {
 
 export interface FaceIdPlugin {
   isAvailable(): Promise<{ value: boolean }>;
-  auth(options: { title?: string; reason?: string }): Promise<void>;
+  auth(options?: { reason?: string }): Promise<void>;
 }
