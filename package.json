@@ -12,7 +12,11 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "docs": "typedoc --out docs src"
   },
-  "author": "Daniel Sogl",
+  "author": {
+    "name": "Daniel Sogl",
+    "email": "mytechde@outlook.com",
+    "url": "https://github.com/danielsogl"
+  },
   "license": "MIT",
   "homepage": "https://danielsogl.github.io/capacitor-face-id/",
   "dependencies": {
