@@ -9,7 +9,8 @@
     "clean": "rm -rf ./dist",
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "docs": "typedoc --out docs src"
   },
   "author": "Daniel Sogl",
   "license": "MIT",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@capacitor/ios": "latest",
     "conventional-changelog-cli": "^2.0.23",
+    "typedoc": "^0.15.0",
     "typescript": "^3.2.4"
   },
   "files": [
