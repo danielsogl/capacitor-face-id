@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -14,7 +14,9 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm test
-      - run: npm build
+      - run: npm run build
+      - run: cd ./ios && pod install
+      - run: cd ./ios && xcodebuild build -workspace Plugin.xcworkspace -scheme Plugin
 
   publish-npm:
     needs: build
@@ -26,7 +28,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: npm build
+      - run: npm run build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
