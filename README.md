@@ -2,6 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/capacitor-face-id.svg)](https://badge.fury.io/js/capacitor-face-id)
 ![](https://github.com/danielsogl/capacitor-face-id/workflows/Node%20CI/badge.svg)
+![](https://github.com/danielsogl/capacitor-face-id/workflows/iOS/badge.svg)
+![](https://github.com/danielsogl/capacitor-face-id/workflows/Node.js%20Package/badge.svg)
 
 Allow users to authenticate with Face ID or Touch ID on iOS devices
 
