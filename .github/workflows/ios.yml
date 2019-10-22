@@ -10,10 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install Pods
-      run: |
-        cd ./ios
-        pod install
+      run: cd ./ios && pod install
     - name: Build
-      run: |
-        cd ./ios
-        xcodebuild build -workspace Plugin.xcworkspace -scheme Plugin
+      run: cd ./ios && xcodebuild build -workspace Plugin.xcworkspace -scheme Plugin
