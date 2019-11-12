@@ -49,7 +49,7 @@ FaceId.isAvailable().then(checkResult => {
 
 ## API
 
-| Method                            | Default                                             | Type                          | Description                                |
-| --------------------------------- | --------------------------------------------------- | ----------------------------- | ------------------------------------------ |
-| isAvailable()                     |                                                     | `Promise<{ value: string }>`  | Checks if Face ID or Touch ID is available |
-| auth(options?: {reason?: string}) | options: {reason: "Access requires authentication"} | `Promise<void>`               | Displays the Face ID or Touch ID screen    |
+| Method                            | Default                                             | Type                         | Description                                                         |
+| --------------------------------- | --------------------------------------------------- | ---------------------------- | ------------------------------------------------------------------- |
+| isAvailable()                     |                                                     | `Promise<{ value: string }>` | Checks if Face ID or Touch ID is available, and returns type if so. |
+| auth(options?: {reason?: string}) | options: {reason: "Access requires authentication"} | `Promise<void>`              | Displays the Face ID or Touch ID screen                             |
