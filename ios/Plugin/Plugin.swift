@@ -16,20 +16,20 @@ public class FaceId: CAPPlugin {
             switch(authContext.biometryType) {
             case .none:
                 call.success([
-                    "value": 'None'
+                    "value": "None"
                 ])
             case .touchID:
                 call.success([
-                    "value": 'TouchId'
+                    "value": "TouchId"
                 ])
             case .faceID:
                 call.success([
-                    "value": 'FaceId'
+                    "value": "FaceId"
                 ])
             }
         } else {
             call.success([
-                "value": 'None'
+                "value": "None"
             ])
         }
     }
