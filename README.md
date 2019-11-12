@@ -51,5 +51,5 @@ FaceId.isAvailable().then(checkResult => {
 
 | Method                            | Default                                             | Type                          | Description                                |
 | --------------------------------- | --------------------------------------------------- | ----------------------------- | ------------------------------------------ |
-| isAvailable()                     |                                                     | `Promise<{ value: boolean }>` | Checks if Face ID or Touch ID is available |
+| isAvailable()                     |                                                     | `Promise<{ value: string }>`  | Checks if Face ID or Touch ID is available |
 | auth(options?: {reason?: string}) | options: {reason: "Access requires authentication"} | `Promise<void>`               | Displays the Face ID or Touch ID screen    |

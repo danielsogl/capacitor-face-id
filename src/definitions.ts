@@ -6,8 +6,7 @@ declare module '@capacitor/core' {
 }
 
 export interface FaceIdPluginIsAvailableResult {
-  /** true if Face ID or Touch ID is available */
-  value: boolean;
+  value: string;
 }
 
 export interface FaceIdPluginAuthOptions {
@@ -19,7 +18,7 @@ export interface FaceIdPlugin {
   /**
    * check if Face ID or Touch ID is available
    * @returns  {Promise}
-   * @resolve {value: boolean}
+   * @resolve {value: string}
    * @rejects PluginResultError
    */
   isAvailable(): Promise<FaceIdPluginIsAvailableResult>;
