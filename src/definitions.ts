@@ -7,7 +7,7 @@ declare module '@capacitor/core' {
 
 export interface FaceIdPluginIsAvailableResult {
   /**  Returns available biometric type or 'None' if unavailable */
-  value: string;
+  value: 'None' | 'TouchId' | 'FaceId';
 }
 
 export interface FaceIdPluginAuthOptions {
