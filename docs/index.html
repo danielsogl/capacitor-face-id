@@ -68,7 +68,9 @@
 					<h1>Capacitor Face ID Plugin</h1>
 				</a>
 				<p><a href="https://badge.fury.io/js/capacitor-face-id"><img src="https://badge.fury.io/js/capacitor-face-id.svg" alt="npm version"></a>
-				<a href="https://travis-ci.org/danielsogl/capacitor-face-id"><img src="https://travis-ci.org/danielsogl/capacitor-face-id.svg?branch=master" alt="Build Status"></a></p>
+					<img src="https://github.com/danielsogl/capacitor-face-id/workflows/Node%20CI/badge.svg" alt="">
+					<img src="https://github.com/danielsogl/capacitor-face-id/workflows/iOS/badge.svg" alt="">
+				<img src="https://github.com/danielsogl/capacitor-face-id/workflows/Node.js%20Package/badge.svg" alt=""></p>
 				<p>Allow users to authenticate with Face ID or Touch ID on iOS devices</p>
 				<p><img src="https://www.intego.com/mac-security-blog/wp-content/uploads/2017/10/Touch-ID-vs-Face-ID.png" alt="Logo"></p>
 				<a href="#instalation" id="instalation" style="color: inherit; text-decoration: none;">
@@ -119,8 +121,8 @@ FaceId.isAvailable().then(<span class="hljs-function"><span class="hljs-params">
 					<tbody><tr>
 							<td>isAvailable()</td>
 							<td></td>
-							<td><code>Promise&lt;{ value: boolean }&gt;</code></td>
-							<td>Checks if Face ID or Touch ID is available</td>
+							<td><code>Promise&lt;{ value: string }&gt;</code></td>
+							<td>Checks if Face ID or Touch ID is available, and returns type if so.</td>
 						</tr>
 						<tr>
 							<td>auth(options?: {reason?: string})</td>
@@ -138,10 +140,10 @@ FaceId.isAvailable().then(<span class="hljs-function"><span class="hljs-params">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_definitions_.html">"definitions"</a>
+						<a href="modules/_definitions_.html">&quot;definitions&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
+						<a href="modules/_index_.html">&quot;index&quot;</a>
 					</li>
 				</ul>
 			</nav>
