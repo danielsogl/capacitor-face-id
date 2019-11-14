@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/danielsogl/capacitor-face-id/compare/v1.0.5...v1.1.0) (2019-11-14)
+
+
+### Features
+
+* **plugin:** return available type instead of boolean  ([#10](https://github.com/danielsogl/capacitor-face-id/issues/10)) ([c611f57](https://github.com/danielsogl/capacitor-face-id/commit/c611f57cb3207a1ca1673ecc2b6a6bd85037edc2))
+
+
+
 ## [1.0.5](https://github.com/danielsogl/capacitor-face-id/compare/v1.0.4...v1.0.5) (2019-10-25)
 
 
