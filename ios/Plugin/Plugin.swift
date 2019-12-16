@@ -8,10 +8,11 @@ import LocalAuthentication
  */
 @objc(FaceId)
 public class FaceId: CAPPlugin {
-    let authContext = LAContext()
     
     @objc func isAvailable(_ call: CAPPluginCall) {
         if #available(iOS 11, *) {
+            let authContext = LAContext()
+            
             let _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
             switch(authContext.biometryType) {
             case .none:
@@ -35,6 +36,10 @@ public class FaceId: CAPPlugin {
     }
     
     @objc func auth(_ call: CAPPluginCall) {
+        let authContext = LAContext()
+        
+        authContext.touchIDAuthenticationAllowableReuseDuration = 60;
+        
         let reason = call.getString("reason") ?? "Access requires authentication"
         authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason ) { success, error in
             if success {
