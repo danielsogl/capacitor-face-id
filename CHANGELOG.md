@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/danielsogl/capacitor-face-id/compare/v1.1.0...v1.1.1) (2019-12-17)
+
+
+### Bug Fixes
+
+* **lib:** move LAContext inside methods  ([#23](https://github.com/danielsogl/capacitor-face-id/issues/23)) ([12d63f2](https://github.com/danielsogl/capacitor-face-id/commit/12d63f25dcba643bb3b9e8168bdcc6ebb36019e5)), closes [#1](https://github.com/danielsogl/capacitor-face-id/issues/1) [#14](https://github.com/danielsogl/capacitor-face-id/issues/14)
+
+
+
 # [1.1.0](https://github.com/danielsogl/capacitor-face-id/compare/v1.0.5...v1.1.0) (2019-11-14)
 
 
