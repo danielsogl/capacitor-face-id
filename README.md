@@ -9,7 +9,7 @@ Allow users to authenticate with Face ID or Touch ID on iOS devices
 
 ![Logo](https://www.intego.com/mac-security-blog/wp-content/uploads/2017/10/Touch-ID-vs-Face-ID.png)
 
-## Instalation
+## Installation
 
 ```sh
 npm install capacitor-face-id
