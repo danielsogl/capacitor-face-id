@@ -27,3 +27,16 @@ jobs:
       run: cd ./ios && pod install
     - name: Build
       run: cd ./ios && xcodebuild build -workspace Plugin.xcworkspace -scheme Plugin
+    - name: Build docs
+      run: npm run docs
+    - name: Commit generated docs
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "´docs(pages): update documentation" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        directory: ./docs
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+      
