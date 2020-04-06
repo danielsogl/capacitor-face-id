@@ -12,7 +12,7 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -34,9 +34,12 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -m "´docs(pages): update documentation" -a
-    - name: Push changes
+    - run: git pull
+    - run: git status
+    - name: Push docs to master
       uses: ad-m/github-push-action@master
       with:
         directory: ./docs
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: 'origin HEAD'
       
