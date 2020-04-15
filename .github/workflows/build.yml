@@ -41,5 +41,4 @@ jobs:
       with:
         directory: ./docs
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: 'origin HEAD'
       
