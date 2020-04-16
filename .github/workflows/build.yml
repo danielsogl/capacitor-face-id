@@ -28,9 +28,9 @@ jobs:
     - name: Build
       run: cd ./ios && xcodebuild build -workspace Plugin.xcworkspace -scheme Plugin
     - name: Build docs
-      run: |
-        npm run docs
-        mv ./docs/index.html ./docs/200.html
+      run: npm run docs
+    - name: Rename index.html
+      run: mv ./docs/index.html ./docs/200.html
     - name: Commit generated docs
       run: |
         git config --local user.email "action@github.com"
