@@ -31,8 +31,8 @@ jobs:
       run: npm run docs
     - name: Commit generated docs
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "mytechde@outlook.com"
+        git config --local user.name "Daniel Sogl"
         git commit -m "docs(pages): update documentation" -a
     - run: git pull
     - run: git status
