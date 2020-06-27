@@ -1,6 +1,6 @@
 {
   "name": "capacitor-face-id",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Allow users to authenticate with Face ID or Touch ID on iOS devices",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
