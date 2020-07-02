@@ -69,66 +69,81 @@
 				</a>
 				<p><a href="https://badge.fury.io/js/capacitor-face-id"><img src="https://badge.fury.io/js/capacitor-face-id.svg" alt="npm version"></a>
 				<img src="https://github.com/danielsogl/capacitor-face-id/workflows/Build/badge.svg" alt="Build"></p>
-				<p>Allow users to authenticate with Face ID or Touch ID on iOS devices</p>
+				<p>Allow users to authenticate with Face ID or Touch ID on iOS devices.</p>
 				<p><img src="https://www.intego.com/mac-security-blog/wp-content/uploads/2017/10/Touch-ID-vs-Face-ID.png" alt="Logo"></p>
+				<a href="#breaking-change" id="breaking-change" style="color: inherit; text-decoration: none;">
+					<h4>BREAKING CHANGE</h4>
+				</a>
+				<p>Prior to v2.1.0, <code>isAvailable()</code> returned <code>&quot;TouchID&quot;</code> or <code>&quot;FaceID&quot;</code> if either was
+					available. Starting with v2.1.0, <code>&quot;Touch ID&quot;</code> or <code>&quot;Face ID&quot;</code> is returned, since
+					those are the official names you want to show to your users. This change removes the
+				necessity to map the returned value to the user-facing name.</p>
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
 				</a>
 				<pre><code class="language-sh">npm install capacitor-face-id</code></pre>
-				<a href="#ios-notes" id="ios-notes" style="color: inherit; text-decoration: none;">
-					<h2>iOS Notes</h2>
+				<a href="#setup" id="setup" style="color: inherit; text-decoration: none;">
+					<h2>Setup</h2>
 				</a>
-				<p>iOS requires the following usage description be added and filled out for your app in <code>Info.plist</code>:</p>
-				<p>Name: <code>Privacy - Face ID Usage Description</code>
-					<br>
-				Key: <code>NSFaceIDUsageDescription</code></p>
-				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
-					<h2>Example</h2>
+				<p>On iOS, you must add an entry to your target’s <code>Info.plist</code>:</p>
+				<ol>
+					<li>Go to the settings for your app’s target (not the project) in Xcode.</li>
+					<li>Click on the <code>Info</code> tab.</li>
+					<li>Add a property to the properties list.</li>
+					<li>Select <code>Privacy - Face ID Usage Description</code> as the key.</li>
+					<li>Set the value to the prompt you want to show to the user the first
+					time a Face/Touch ID authorization is attempted. Example:</li>
+				</ol>
+				<pre><code>Access <span class="hljs-built_in">to</span> <span class="hljs-keyword">the</span> app requires authentication.</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Plugins, PluginResultError } <span class="hljs-keyword">from</span> <span class="hljs-string">'@capacitor/core'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Plugins, PluginResultError } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@capacitor/core&#x27;</span>;
+<span class="hljs-keyword">import</span> { FaceIDPluginErrorCode } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;capacitor-face-id&#x27;</span>;
 
 <span class="hljs-keyword">const</span> { FaceId } = Plugins;
+<span class="hljs-keyword">const</span> appName = <span class="hljs-string">&#x27;My Great App&#x27;</span>;
 
-...
-<span class="hljs-comment">// check if device supports Face ID or Touch ID</span>
-FaceId.isAvailable().then(<span class="hljs-function"><span class="hljs-params">checkResult</span> =&gt;</span> {
-  <span class="hljs-keyword">if</span>(checkResult.value) {
-    FaceId.auth().then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'authenticated'</span>);
-    }).catch(<span class="hljs-function">(<span class="hljs-params">error: PluginResultError</span>) =&gt;</span> {
-      <span class="hljs-comment">// handle rejection errors</span>
-      <span class="hljs-built_in">console</span>.error(error.message);
-    });
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">biometricAuth</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> authCheck = <span class="hljs-keyword">await</span> FaceId.isAvailable();
+  <span class="hljs-keyword">const</span> authType = authCheck.value;
+
+  <span class="hljs-keyword">if</span> (authType !== <span class="hljs-string">&#x27;None&#x27;</span>) {
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">await</span> FaceId.auth({
+        reason: <span class="hljs-string">&#x27;Please authenticate&#x27;</span>,
+        fallbackTitle: <span class="hljs-string">&#x27;&#x27;</span>
+      });
+    } <span class="hljs-keyword">catch</span> (error) {
+      <span class="hljs-keyword">let</span> message;
+
+      <span class="hljs-keyword">switch</span> (error.code) {
+        <span class="hljs-comment">// This happens if the user disables biometric access in Settings</span>
+        <span class="hljs-keyword">case</span> FaceIDPluginErrorCode.biometryNotAvailable:
+          message = <span class="hljs-string">`In order to use <span class="hljs-subst">${authType}</span>, you must enable it in Settings &gt; <span class="hljs-subst">${appName}</span>.`</span>;
+          <span class="hljs-keyword">break</span>;
+
+        <span class="hljs-keyword">case</span> FaceIDPluginErrorCode.biometryNotEnrolled:
+          message = <span class="hljs-string">`In order to use <span class="hljs-subst">${authType}</span>, you must set it up in the Settings app.`</span>;
+          <span class="hljs-keyword">break</span>;
+
+        <span class="hljs-keyword">default</span>:
+          message = <span class="hljs-string">&#x27;Feel free to try again.&#x27;</span>;
+      }
+
+      <span class="hljs-keyword">await</span> showAlert({
+        header: <span class="hljs-string">`<span class="hljs-subst">${authType}</span> Error`</span>,
+        message: <span class="hljs-string">`<span class="hljs-subst">${error.message}</span> <span class="hljs-subst">${message}</span>`</span>
+      });
+    }
   } <span class="hljs-keyword">else</span> {
-    <span class="hljs-comment">// use custom fallback authentication here</span>
+    <span class="hljs-comment">// use fallback authentication here</span>
   }
-});
-</code></pre>
+}</code></pre>
 				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
 					<h2>API</h2>
 				</a>
-				<table>
-					<thead>
-						<tr>
-							<th>Method</th>
-							<th>Default</th>
-							<th>Type</th>
-							<th>Description</th>
-						</tr>
-					</thead>
-					<tbody><tr>
-							<td>isAvailable()</td>
-							<td></td>
-							<td><code>Promise&lt;{ value: string }&gt;</code></td>
-							<td>Checks if Face ID or Touch ID is available, and returns type if so.</td>
-						</tr>
-						<tr>
-							<td>auth(options?: {reason?: string})</td>
-							<td>options: {reason: &quot;Access requires authentication&quot;}</td>
-							<td><code>Promise&lt;void&gt;</code></td>
-							<td>Displays the Face ID or Touch ID screen</td>
-						</tr>
-				</tbody></table>
+				<p>The complete API is documented <a href="./src/definitions.ts">here</a>.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -157,6 +172,9 @@ FaceId.isAvailable().then(<span class="hljs-function"><span class="hljs-params">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 			</ul>
 		</div>
@@ -167,6 +185,5 @@ FaceId.isAvailable().then(<span class="hljs-function"><span class="hljs-params">
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

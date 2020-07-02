@@ -103,19 +103,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/danielsogl/capacitor-face-id/blob/f5b46b3/src/definitions.ts#L32">definitions.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/willsub/capacitor-face-id/blob/a103819/src/definitions.ts#L86">src/definitions.ts:86</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Displays the authentication screen</p>
+									<p>Prompts the user for biometric authentication.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>resolve</dt>
 									<dd><p>void</p>
 									</dd>
 									<dt>rejects</dt>
-									<dd><p>PluginResultError</p>
+									<dd><p>FaceIDPluginResultError</p>
 									</dd>
 								</dl>
 							</div>
@@ -139,16 +139,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/danielsogl/capacitor-face-id/blob/f5b46b3/src/definitions.ts#L25">definitions.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/willsub/capacitor-face-id/blob/a103819/src/definitions.ts#L77">src/definitions.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>check if Face ID or Touch ID is available</p>
+									<p>Return the type of biometric authorization that is available (if any).</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>resolve</dt>
-									<dd><p>{value: string}</p>
+									<dd><p>{value: FaceIdPluginIsAvailableResult}</p>
 									</dd>
 									<dt>rejects</dt>
 									<dd><p>PluginResultError</p>
@@ -177,6 +177,12 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_definitions_.faceidpluginerrorcode.html" class="tsd-kind-icon">FaceIDPlugin<wbr>Error<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_definitions_.faceidpluginresulterror.html" class="tsd-kind-icon">FaceIDPlugin<wbr>Result<wbr>Error</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
@@ -211,6 +217,9 @@
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
 		</div>
 	</div>
 </footer>
@@ -219,6 +228,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

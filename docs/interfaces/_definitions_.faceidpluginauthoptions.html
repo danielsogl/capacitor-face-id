@@ -84,7 +84,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_definitions_.faceidpluginauthoptions.html#fallbacktitle" class="tsd-kind-icon">fallback<wbr>Title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_definitions_.faceidpluginauthoptions.html#localizedcanceltitle" class="tsd-kind-icon">localized<wbr>Cancel<wbr>Title</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_definitions_.faceidpluginauthoptions.html#reason" class="tsd-kind-icon">reason</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_definitions_.faceidpluginauthoptions.html#touchidreuseduration" class="tsd-kind-icon">touchIDReuse<wbr>Duration</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,17 +96,68 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="fallbacktitle" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> fallback<wbr>Title</h3>
+					<div class="tsd-signature tsd-kind-icon">fallback<wbr>Title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/willsub/capacitor-face-id/blob/a103819/src/definitions.ts#L27">src/definitions.ts:27</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The localized title for the fallback button.
+								An empty string removes the button.
+							Omitting this shows the iOS default.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="localizedcanceltitle" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> localized<wbr>Cancel<wbr>Title</h3>
+					<div class="tsd-signature tsd-kind-icon">localized<wbr>Cancel<wbr>Title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/willsub/capacitor-face-id/blob/a103819/src/definitions.ts#L40">src/definitions.ts:40</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The localized title for the cancel button in the dialog
+								presented to the user during authentication. Omitting this
+							or passing an empty string displays the iOS default.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="reason" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> reason</h3>
 					<div class="tsd-signature tsd-kind-icon">reason<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/danielsogl/capacitor-face-id/blob/f5b46b3/src/definitions.ts#L15">definitions.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/willsub/capacitor-face-id/blob/a103819/src/definitions.ts#L20">src/definitions.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>String to display authentication reason</p>
+							<p>Localized string to display as the authentication reason.
+							Defaults to &quot;Access requires authentication&quot;.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="touchidreuseduration" class="tsd-anchor"></a>
+					<h3>touchIDReuse<wbr>Duration</h3>
+					<div class="tsd-signature tsd-kind-icon">touchIDReuse<wbr>Duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/willsub/capacitor-face-id/blob/a103819/src/definitions.ts#L33">src/definitions.ts:33</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>See <a href="https://developer.apple.com/documentation/localauthentication/lacontext/1622329-touchidauthenticationallowablere">https://developer.apple.com/documentation/localauthentication/lacontext/1622329-touchidauthenticationallowablere</a>
+							Defaults to 60.</p>
 						</div>
 					</div>
 				</section>
@@ -125,6 +179,12 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_definitions_.faceidpluginerrorcode.html" class="tsd-kind-icon">FaceIDPlugin<wbr>Error<wbr>Code</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_definitions_.faceidpluginresulterror.html" class="tsd-kind-icon">FaceIDPlugin<wbr>Result<wbr>Error</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_definitions_.faceidplugin.html" class="tsd-kind-icon">Face<wbr>IdPlugin</a>
 					</li>
@@ -134,7 +194,16 @@
 						<a href="_definitions_.faceidpluginauthoptions.html" class="tsd-kind-icon">Face<wbr>IdPlugin<wbr>Auth<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_definitions_.faceidpluginauthoptions.html#fallbacktitle" class="tsd-kind-icon">fallback<wbr>Title</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_definitions_.faceidpluginauthoptions.html#localizedcanceltitle" class="tsd-kind-icon">localized<wbr>Cancel<wbr>Title</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_definitions_.faceidpluginauthoptions.html#reason" class="tsd-kind-icon">reason</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_definitions_.faceidpluginauthoptions.html#touchidreuseduration" class="tsd-kind-icon">touchIDReuse<wbr>Duration</a>
 							</li>
 						</ul>
 					</li>
@@ -156,6 +225,9 @@
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
 		</div>
 	</div>
 </footer>
@@ -164,6 +236,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
