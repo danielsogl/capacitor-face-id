@@ -83,4 +83,4 @@ async function biometricAuth() {
 
 ## API
 
-The complete API is documented [here](./src/definitions.ts).
+The complete API is documented [here](./docs/index.html).
