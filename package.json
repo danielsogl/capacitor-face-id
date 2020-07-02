@@ -12,11 +12,18 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "docs": "typedoc --out docs src"
   },
-  "author": {
-    "name": "Daniel Sogl",
-    "email": "mytechde@outlook.com",
-    "url": "https://github.com/danielsogl"
-  },
+  "authors": [
+    {
+      "name": "Daniel Sogl",
+      "email": "mytechde@outlook.com",
+      "url": "https://github.com/danielsogl"
+    },
+    {
+      "name": "Aparajita Fishman",
+      "email": "aparajita@aparajita.com",
+      "url": "https://github.com/aparajita"
+    }
+  ],
   "license": "MIT",
   "homepage": "https://danielsogl.github.io/capacitor-face-id/",
   "dependencies": {
@@ -24,9 +31,9 @@
   },
   "devDependencies": {
     "@capacitor/ios": "latest",
-    "conventional-changelog-cli": "^2.0.25",
-    "typedoc": "^0.17.4",
-    "typescript": "^3.6.4"
+    "conventional-changelog-cli": "^2.0.34",
+    "typedoc": "^0.17.8",
+    "typescript": "^3.9.6"
   },
   "files": [
     "dist/",
