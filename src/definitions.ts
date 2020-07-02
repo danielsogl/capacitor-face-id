@@ -68,15 +68,18 @@ export interface FaceIDPluginResultError extends PluginResultError {
 
 export interface FaceIdPlugin {
   /**
-   * check if Face ID or Touch ID is available
-   * @returns  {Promise}
-   * @resolve {value: string}
+   * Return the type of biometric authorization that is available (if any).
+   *
+   * @returns {Promise}
+   * @resolve {value: FaceIdPluginIsAvailableResult}
    * @rejects PluginResultError
    */
   isAvailable(): Promise<FaceIdPluginIsAvailableResult>;
+
   /**
-   * Displays the authentication screen
-   * @returns  {Promise}
+   * Prompts the user for biometric authentication.
+   *
+   * @returns {Promise<void>}
    * @resolve void
    * @rejects FaceIDPluginResultError
    */
