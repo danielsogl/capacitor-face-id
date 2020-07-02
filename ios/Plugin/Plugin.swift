@@ -3,8 +3,8 @@ import Capacitor
 import LocalAuthentication
 
 let kNoneType = "None"
-let kTouchIDType = "Touch ID"
-let kFaceIDType = "Face ID"
+let kTouchIDType = "TouchId"
+let kFaceIDType = "FaceId"
 
 let errorCodeMap: [LAError.Code: String] = [
   .appCancel: "appCancel",
@@ -26,40 +26,40 @@ let errorCodeMap: [LAError.Code: String] = [
  */
 @objc(FaceId)
 public class FaceId: CAPPlugin {
-  
+
   @objc func isAvailable(_ call: CAPPluginCall) {
     var authType = kNoneType
 
     if #available(iOS 11, *) {
       let authContext = LAContext()
-      
+
       let _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-      
+
       switch (authContext.biometryType) {
       case .touchID:
         authType = kTouchIDType
-        
+
       case .faceID:
         authType = kFaceIDType
-        
+
       default:
         break
       }
     }
-    
+
     call.success([
       "value": authType
     ])
   }
-  
+
   @objc func auth(_ call: CAPPluginCall) {
     let authContext = LAContext()
-    
+
     authContext.localizedFallbackTitle = call.getString("fallbackTitle")
     authContext.touchIDAuthenticationAllowableReuseDuration = call.getDouble("touchIDReuseDuration") ?? 60
     authContext.localizedCancelTitle = call.getString("cancelTitle")
     let reason = call.getString("reason") ?? "Access requires authentication"
-    
+
     authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason ) {
       success, error in
       if success {
