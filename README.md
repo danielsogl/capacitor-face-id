@@ -7,12 +7,6 @@ Allow users to authenticate with Face ID or Touch ID on iOS devices.
 
 ![Logo](https://www.intego.com/mac-security-blog/wp-content/uploads/2017/10/Touch-ID-vs-Face-ID.png)
 
-#### BREAKING CHANGE
-Prior to v2.1.0, `isAvailable()` returned `"TouchID"` or `"FaceID"` if either was
-available. Starting with v2.1.0, `"Touch ID"` or `"Face ID"` is returned, since
-those are the official names you want to show to your users. This change removes the
-necessity to map the returned value to the user-facing name.
-
 ## Installation
 
 ```sh
