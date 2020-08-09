@@ -25,7 +25,7 @@
   "devDependencies": {
     "@capacitor/ios": "latest",
     "conventional-changelog-cli": "^2.0.25",
-    "typedoc": "^0.17.4",
+    "typedoc": "^0.18.0",
     "typescript": "^3.6.4"
   },
   "files": [
