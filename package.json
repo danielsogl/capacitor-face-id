@@ -26,7 +26,7 @@
     "@capacitor/ios": "latest",
     "conventional-changelog-cli": "^2.0.25",
     "typedoc": "^0.20.17",
-    "typescript": "^3.6.4"
+    "typescript": "^4.1.5"
   },
   "files": [
     "dist/",
