@@ -1,171 +1,55 @@
-<!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>capacitor-face-id</title>
-	<meta name="description" content="Documentation for capacitor-face-id">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="index.html" class="title">capacitor-face-id</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
-			<h1>capacitor-face-id</h1>
-		</div>
-	</div>
-</header>
-<div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<a href="#capacitor-face-id-plugin" id="capacitor-face-id-plugin" style="color: inherit; text-decoration: none;">
-					<h1>Capacitor Face ID Plugin</h1>
-				</a>
-				<p><a href="https://badge.fury.io/js/capacitor-face-id"><img src="https://badge.fury.io/js/capacitor-face-id.svg" alt="npm version"></a>
-				<img src="https://github.com/danielsogl/capacitor-face-id/workflows/Build/badge.svg" alt="Build"></p>
-				<p>Allow users to authenticate with Face ID or Touch ID on iOS devices</p>
-				<p><img src="https://www.intego.com/mac-security-blog/wp-content/uploads/2017/10/Touch-ID-vs-Face-ID.png" alt="Logo"></p>
-				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
-					<h2>Installation</h2>
-				</a>
-				<pre><code class="language-sh">npm install capacitor-face-id</code></pre>
-				<a href="#ios-notes" id="ios-notes" style="color: inherit; text-decoration: none;">
-					<h2>iOS Notes</h2>
-				</a>
-				<p>iOS requires the following usage description be added and filled out for your app in <code>Info.plist</code>:</p>
-				<p>Name: <code>Privacy - Face ID Usage Description</code>
-					<br>
-				Key: <code>NSFaceIDUsageDescription</code></p>
-				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
-					<h2>Example</h2>
-				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Plugins, PluginResultError } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@capacitor/core&#x27;</span>;
+<!DOCTYPE html><html class="default no-js"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>capacitor-face-id</title><meta name="description" content="Documentation for capacitor-face-id"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">capacitor-face-id</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>capacitor-face-id</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#capacitor-face-id-plugin" id="capacitor-face-id-plugin" style="color: inherit; text-decoration: none;">
+  <h1>Capacitor Face ID Plugin</h1>
+</a>
+<p><a href="https://badge.fury.io/js/capacitor-face-id"><img src="https://badge.fury.io/js/capacitor-face-id.svg" alt="npm version"></a>
+<img src="https://github.com/danielsogl/capacitor-face-id/workflows/Build/badge.svg" alt="Build"></p>
+<p>Allow users to authenticate with Face ID or Touch ID on iOS devices</p>
+<p><img src="https://www.intego.com/mac-security-blog/wp-content/uploads/2017/10/Touch-ID-vs-Face-ID.png" alt="Logo"></p>
 
-<span class="hljs-keyword">const</span> { FaceId } = Plugins;
-
-...
-<span class="hljs-comment">// check if device supports Face ID or Touch ID</span>
-FaceId.isAvailable().then(<span class="hljs-function"><span class="hljs-params">checkResult</span> =&gt;</span> {
-  <span class="hljs-keyword">if</span>(checkResult.value) {
-    FaceId.auth().then(<span class="hljs-function">() =&gt;</span> {
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;authenticated&#x27;</span>);
-    }).catch(<span class="hljs-function">(<span class="hljs-params">error: PluginResultError</span>) =&gt;</span> {
-      <span class="hljs-comment">// handle rejection errors</span>
-      <span class="hljs-built_in">console</span>.error(error.message);
-    });
-  } <span class="hljs-keyword">else</span> {
-    <span class="hljs-comment">// use custom fallback authentication here</span>
-  }
-});
+<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+  <h2>Installation</h2>
+</a>
+<pre><code class="language-sh"><span class="hl-0">npm install capacitor-face-id</span>
 </code></pre>
-				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
-					<h2>API</h2>
-				</a>
-				<table>
-					<thead>
-						<tr>
-							<th>Method</th>
-							<th>Default</th>
-							<th>Type</th>
-							<th>Description</th>
-						</tr>
-					</thead>
-					<tbody><tr>
-							<td>isAvailable()</td>
-							<td></td>
-							<td><code>Promise&lt;{ value: string }&gt;</code></td>
-							<td>Checks if Face ID or Touch ID is available, and returns type if so.</td>
-						</tr>
-						<tr>
-							<td>auth(options?: {reason?: string})</td>
-							<td>options: {reason: &quot;Access requires authentication&quot;}</td>
-							<td><code>Promise&lt;void&gt;</code></td>
-							<td>Displays the Face ID or Touch ID screen</td>
-						</tr>
-				</tbody></table>
-			</div>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_definitions_.html">&quot;definitions&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_index_.html">&quot;index&quot;</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-		</div>
-	</div>
-</footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+
+<a href="#ios-notes" id="ios-notes" style="color: inherit; text-decoration: none;">
+  <h2>iOS Notes</h2>
+</a>
+<p>iOS requires the following usage description be added and filled out for your app in <code>Info.plist</code>:</p>
+<p>Name: <code>Privacy - Face ID Usage Description</code>
+<br>
+Key: <code>NSFaceIDUsageDescription</code></p>
+
+<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+  <h2>Example</h2>
+</a>
+<pre><code class="language-ts"><span class="hl-1">import</span><span class="hl-0"> { </span><span class="hl-2">Plugins</span><span class="hl-0">, </span><span class="hl-2">PluginResultError</span><span class="hl-0"> } </span><span class="hl-1">from</span><span class="hl-0"> </span><span class="hl-3">&#39;@capacitor/core&#39;</span><span class="hl-0">;</span><br/><br/><span class="hl-4">const</span><span class="hl-0"> { </span><span class="hl-5">FaceId</span><span class="hl-0"> } = </span><span class="hl-2">Plugins</span><span class="hl-0">;</span><br/><br/><span class="hl-0">...</span><br/><span class="hl-6">// check if device supports Face ID or Touch ID</span><br/><span class="hl-2">FaceId</span><span class="hl-0">.</span><span class="hl-7">isAvailable</span><span class="hl-0">().</span><span class="hl-7">then</span><span class="hl-0">(</span><span class="hl-2">checkResult</span><span class="hl-0"> </span><span class="hl-4">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">  </span><span class="hl-1">if</span><span class="hl-0">(</span><span class="hl-2">checkResult</span><span class="hl-0">.</span><span class="hl-2">value</span><span class="hl-0">) {</span><br/><span class="hl-0">    </span><span class="hl-2">FaceId</span><span class="hl-0">.</span><span class="hl-7">auth</span><span class="hl-0">().</span><span class="hl-7">then</span><span class="hl-0">(() </span><span class="hl-4">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">      </span><span class="hl-2">console</span><span class="hl-0">.</span><span class="hl-7">log</span><span class="hl-0">(</span><span class="hl-3">&#39;authenticated&#39;</span><span class="hl-0">);</span><br/><span class="hl-0">    }).</span><span class="hl-7">catch</span><span class="hl-0">((</span><span class="hl-2">error</span><span class="hl-0">: </span><span class="hl-8">PluginResultError</span><span class="hl-0">) </span><span class="hl-4">=&gt;</span><span class="hl-0"> {</span><br/><span class="hl-0">      </span><span class="hl-6">// handle rejection errors</span><br/><span class="hl-0">      </span><span class="hl-2">console</span><span class="hl-0">.</span><span class="hl-7">error</span><span class="hl-0">(</span><span class="hl-2">error</span><span class="hl-0">.</span><span class="hl-2">message</span><span class="hl-0">);</span><br/><span class="hl-0">    });</span><br/><span class="hl-0">  } </span><span class="hl-1">else</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-6">// use custom fallback authentication here</span><br/><span class="hl-0">  }</span><br/><span class="hl-0">});</span><br/>
+</code></pre>
+
+<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+  <h2>API</h2>
+</a>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Default</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>isAvailable()</td>
+<td></td>
+<td><code>Promise&lt;{ value: string }&gt;</code></td>
+<td>Checks if Face ID or Touch ID is available, and returns type if so.</td>
+</tr>
+<tr>
+<td>auth(options?: {reason?: string})</td>
+<td>options: {reason: &quot;Access requires authentication&quot;}</td>
+<td><code>Promise&lt;void&gt;</code></td>
+<td>Displays the Face ID or Touch ID screen</td>
+</tr>
+</tbody></table>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-interface"><a href="interfaces/FaceIdPlugin.html" class="tsd-kind-icon">Face<wbr/>Id<wbr/>Plugin</a></li><li class="tsd-kind-interface"><a href="interfaces/FaceIdPluginAuthOptions.html" class="tsd-kind-icon">Face<wbr/>Id<wbr/>Plugin<wbr/>Auth<wbr/>Options</a></li><li class="tsd-kind-interface"><a href="interfaces/FaceIdPluginIsAvailableResult.html" class="tsd-kind-icon">Face<wbr/>Id<wbr/>Plugin<wbr/>Is<wbr/>Available<wbr/>Result</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
