@@ -6,25 +6,3 @@ updates:
     interval: daily
     time: "04:00"
   open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: typedoc
-    versions:
-    - 0.20.19
-    - 0.20.21
-    - 0.20.22
-    - 0.20.23
-    - 0.20.24
-    - 0.20.26
-    - 0.20.27
-    - 0.20.28
-    - 0.20.29
-    - 0.20.30
-    - 0.20.31
-    - 0.20.32
-    - 0.20.33
-    - 0.20.34
-    - 0.20.35
-  - dependency-name: typescript
-    versions:
-    - 3.9.9
-    - 4.1.4
