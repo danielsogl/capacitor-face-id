@@ -6,10 +6,10 @@ jobs:
   build:
 
     runs-on: macOS-latest
-    
+
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
 
     steps:
     - uses: actions/checkout@master
@@ -41,4 +41,4 @@ jobs:
       with:
         directory: ./docs
         github_token: ${{ secrets.GITHUB_TOKEN }}
-      
+
