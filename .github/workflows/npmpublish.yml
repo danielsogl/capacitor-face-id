@@ -1,4 +1,4 @@
-name: Node.js Package
+name: Publish
 
 on:
   release:
@@ -8,15 +8,16 @@ jobs:
   build:
     runs-on: macOS-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: '14'
+          cache: 'npm'
       - run: npm ci
       - run: npm test
       - run: npm run build
       - run: cd ./ios && pod install
-      - run: cd ./ios && xcodebuild build -workspace Plugin.xcworkspace -scheme Plugin
+      - run: cd ./ios && xcodebuild build -workspace Plugin.xcworkspace -scheme Plugin -sdk iphoneos
 
   publish-npm:
     needs: build

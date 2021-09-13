@@ -7,16 +7,13 @@ jobs:
 
     runs-on: macOS-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '14'
+        cache: 'npm'
     - name: Install dependencies
       run: npm ci
     - name: Build Web Interface
@@ -26,12 +23,12 @@ jobs:
     - name: Install Pods
       run: cd ./ios && pod install
     - name: Build
-      run: cd ./ios && xcodebuild build -workspace Plugin.xcworkspace -scheme Plugin
+      run: cd ./ios && xcodebuild build -workspace Plugin.xcworkspace -scheme Plugin -sdk iphoneos
     - name: Build docs
       run: npm run docs
     - name: Commit generated docs
       run: |
-        git config --local user.email "mytechde@outlook.com"
+        git config --local user.email "me@danielsogl.de"
         git config --local user.name "Daniel Sogl"
         git commit -m "docs(pages): update documentation" -a
     - run: git pull
