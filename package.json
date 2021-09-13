@@ -14,8 +14,8 @@
   },
   "author": {
     "name": "Daniel Sogl",
-    "email": "mytechde@outlook.com",
-    "url": "https://github.com/danielsogl"
+    "email": "me@danielsogl.de",
+    "url": "https://danielsogl.de"
   },
   "license": "MIT",
   "homepage": "https://danielsogl.github.io/capacitor-face-id/",
@@ -36,7 +36,10 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "ios",
+    "face-id",
+    "biometric"
   ],
   "capacitor": {
     "ios": {
