@@ -1,3 +1,7 @@
+## [2.0.2](https://github.com/danielsogl/capacitor-face-id/compare/v2.0.1...v2.0.2) (2021-09-13)
+
+
+
 ## [2.0.1](https://github.com/danielsogl/capacitor-face-id/compare/v2.0.0...v2.0.1) (2020-04-30)
 
 
