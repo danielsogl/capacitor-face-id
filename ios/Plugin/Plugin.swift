@@ -16,16 +16,24 @@ public class FaceId: CAPPlugin {
             let _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
             switch(authContext.biometryType) {
             case .none:
-                call.success([
+                call.resolve([
                     "value": "None"
                 ])
             case .touchID:
-                call.success([
+                call.resolve([
                     "value": "TouchId"
                 ])
             case .faceID:
-                call.success([
+                call.resolve([
                     "value": "FaceId"
+                ])
+            case .opticID:
+                call.resolve([
+                    "value": "None"
+                ])
+            @unknown default:
+                call.resolve([
+                    "value": "None"
                 ])
             }
         } else {
